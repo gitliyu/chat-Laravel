@@ -1,7 +1,7 @@
 let socketIo = require('socket.io');
 let app = require('express')();
 let server = require('http').Server(app);
-let httpPort = 80;
+let httpPort = 8000;
 
 app.get('/',function(req,res){
     res.send('启动成功：' + httpPort);
@@ -21,7 +21,9 @@ io.on('connection',(socket) =>{
     //1对1聊天
     socket.on('private chat',(data) => {
         let toSocket = users.find(item => item.user === data.to);
-        toSocket.emit('private chat', data.msg)
+        if(toSocket){
+            toSocket.emit('private chat', data.msg)
+        }
 	});
 
     socket.on('disconnect', () => {

@@ -60,7 +60,8 @@
                 io.emit('private chat',{
                     to   : this.friend_id,
                     msg  : this.message
-                })
+                });
+                this.message = '';
             }
         }
     }
