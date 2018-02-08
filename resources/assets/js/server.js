@@ -1,10 +1,36 @@
-import * as io from 'socket.io-client'
+let socketIo = require('socket.io');
+let app = require('express')();
+let server = require('http').Server(app);
+let httpPort = 8000;
 
-class Server {
-    constructor () {
-        let url = 'http://localhost:8000';
-        this.socket = io.connect(url);
-        return this.socket;
-    }
-}
-export default Server;
+app.get('/',function(req,res){
+    res.send('启动成功：' + httpPort);
+});
+
+let io = socketIo(server);
+let users = [];
+
+io.on('connection',(socket) =>{
+    console.log('有客户端连接:' + socket.id);
+    //关联id
+    socket.on('set id',(id) => {
+        socket.user = id;
+        users.push(socket);
+    });
+
+    //1对1聊天
+    socket.on('private chat',(data) => {
+        let toSocket = users.find(item => item.user === data.to);
+        if(toSocket){
+            toSocket.emit('private chat', data.msg)
+        }
+	});
+
+    socket.on('disconnect', () => {
+        console.log('客户端断开');
+    });
+});
+
+server.listen(httpPort, () => {
+	console.log('listen success on ' + httpPort);
+});
