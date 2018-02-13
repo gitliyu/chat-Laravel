@@ -12,7 +12,6 @@
 </template>
 
 <script type="text/javascript">
-    import * as socket from 'socket.io-client';
     export default {
         data(){
             return {
@@ -32,7 +31,6 @@
                 });
                 if(currentUser && currentUser.password === this.password){
                     this.$store.dispatch('setUser', currentUser);
-                    window.io = socket.connect('http://localhost:8000');
                     io.emit('set id', currentUser.id);
                     this.$router.push('/message');
                 } else{
