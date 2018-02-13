@@ -6,7 +6,7 @@ npm install
 composer install
 //修改env文件，配置数据库
 php artisan migrate
-npm run dev
+npm run dev 或 npm run watch
 ```
 ### Complete
 - 项目文件初始化，依赖文件配置
