@@ -1,4 +1,169 @@
-@import url(https://fonts.googleapis.com/css?family=Raleway:300,400,600);@charset "UTF-8";
+@import url(https://fonts.googleapis.com/css?family=Raleway:300,400,600);
+html {
+  height: 100%;
+}
+html body {
+    height: 100%;
+}
+html body #app {
+      height: 100%;
+}
+
+.login-page {
+  height: 100%;
+  background: url(/images/login.jpg?86770887b11931266cfc7ce035464941);
+  background-size: cover;
+}
+.login-page .center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+}
+.login-page .mu-text-field.has-label .mu-text-field-label.float {
+    color: #666;
+}
+.login-page .mu-text-field-line {
+    background-color: rgba(0, 0, 0, 0.12);
+}
+.login-page .button-group {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+}
+.login-page .button-group .el-button {
+      width: 12rem;
+      margin: 10px 0;
+}
+
+.full-page {
+  padding: 56px 0;
+}
+.full-page .bottom-nav {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+.full-page .bottom-nav i {
+      font-size: 1rem;
+}
+.full-page .bottom-nav .router-link-active {
+      color: #474a4f;
+}
+
+.header-bar-widget {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 10;
+}
+.header-bar-widget .avatar-box img {
+    width: 2.8rem;
+    border-radius: 50%;
+    vertical-align: middle;
+}
+.header-bar-widget .mu-appbar-title {
+    text-align: center;
+}
+.header-bar-widget .el-icon-plus {
+    font-size: 1.5rem;
+    padding-right: 0.5rem;
+}
+.left-popup {
+  width: 55%;
+  max-width: 375px;
+  height: 100%;
+  padding: 24px;
+}
+.left-popup .avatar {
+    width: 100%;
+    border-radius: 50%;
+}
+.left-popup .user-name {
+    font-size: 1.5rem;
+    padding: 0.5rem 0;
+}
+.left-popup .sign-out-btn {
+    position: absolute;
+    bottom: 1rem;
+    left: 0;
+    border: none !important;
+}
+
+.chat-item-widget .avatar {
+  width: 3rem;
+  border-radius: 50%;
+}
+
+.chat-page .mu-appbar {
+  position: fixed;
+  top: 0;
+}
+.chat-page .mu-appbar i {
+    font-size: 1.5rem;
+}
+.chat-page .mu-appbar .mu-appbar-title {
+    text-align: center;
+}
+.chat-page .message-box {
+  padding: 70px 5px 48px;
+}
+.chat-page .message-box .message-item {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    width: 100%;
+    padding-bottom: 0.5rem;
+}
+.chat-page .message-box .message-item.mine {
+      float: right;
+      -webkit-box-orient: horizontal;
+      -webkit-box-direction: reverse;
+          -ms-flex-direction: row-reverse;
+              flex-direction: row-reverse;
+}
+.chat-page .message-box .message-item .avatar img {
+      width: 4rem;
+      border-radius: 50%;
+}
+.chat-page .message-box .message-item .message {
+      padding: 10px;
+      background: #eee;
+      border-radius: 10px;
+      max-width: 16rem;
+      word-break: break-all;
+}
+.chat-page .input-box {
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+}
+.chat-page .input-box .mu-text-field {
+    padding: 0 10px;
+    margin: 0 0 0 2rem;
+}
+.chat-page .input-box .mu-text-field-hint {
+    color: #666;
+}
+@charset "UTF-8";
 
 /*!
  * Bootstrap v3.3.7 (http://getbootstrap.com)

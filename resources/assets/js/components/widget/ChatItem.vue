@@ -1,10 +1,10 @@
 <template>
     <div class="chat-item-widget">
-        <mu-list-item :title="data.name" @click="onChat(data.id)">
-            <img class="avatar" :src="'https://www.liyu.fun/img/' + data.avatar" slot="leftAvatar"/>
+        <mu-list-item :title="user.name" @click="onChat(user.id)">
+            <img class="avatar" :src="'https://www.liyu.fun/img/' + user.avatar" slot="leftAvatar"/>
             <span slot="describe">
-                   {{data.signature}}
-                </span>
+               {{ msg || user.signature}}
+            </span>
         </mu-list-item>
         <mu-divider inset/>
     </div>
@@ -14,15 +14,24 @@
     export default {
         data(){
             return {
-
+                user : {}
             }
         },
         props:{
-            data : Object,
+            id : Number,
+            msg: String,
             canChat: {
                 type    : Boolean,
                 default : true
             }
+        },
+        computed:{
+            users : function(){
+                return this.$store.state.users;
+            },
+        },
+        mounted(){
+            this.user = this.users.filter( user => user.id === this.id)[0];
         },
         methods: {
             onChat (id) {

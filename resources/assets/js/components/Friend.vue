@@ -7,12 +7,12 @@
             </mu-list-item>
             <mu-sub-header>好友</mu-sub-header>
             <chat-item
-                v-if="friends"
-                v-for="item in friends"
+                v-if="currentUser.friends.length"
+                v-for="item in currentUser.friends"
                 :key="item.id"
-                :data="item">
+                :id="item">
             </chat-item>
-            <mu-list-item v-if="!friends">
+            <mu-list-item v-if="!currentUser.friends.length">
                 暂无
             </mu-list-item>
         </mu-list>
@@ -20,27 +20,18 @@
 </template>
 
 <script type="text/javascript">
+    import ChatItem from './widget/ChatItem';
     export default {
         components: {
-            'ChatItem': () => System.import('./widget/ChatItem')
+            'ChatItem': ChatItem
         },
         data(){
-            return {
-                friends : null
-            }
+            return {}
         },
         computed : {
-            users : function(){
-                return this.$store.state.users;
-            },
             currentUser : function(){
                 return this.$store.state.currentUser;
             }
-        },
-        mounted(){
-            this.friends = this.users.filter(item => {
-                return this.currentUser.friends.includes(item.id)
-            })
         },
         methods: {
 

@@ -12,8 +12,8 @@ let mix = require('laravel-mix');
  */
 var webpackConfig = {
   output: {
-    publicPath: '/',                              
-    chunkFilename: 'assets/[name].[chunkhash].js' 
+    publicPath: '/',
+    chunkFilename: 'assets/[name].[chunkhash].js'
   },
   resolve: {
     alias: {

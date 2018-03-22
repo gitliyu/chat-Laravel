@@ -13,9 +13,10 @@
 </template>
 
 <script type="text/javascript">
+    import HeaderBar from './widget/HeaderBar';
     export default {
         components: {
-            'HeaderBar': () => System.import('./widget/HeaderBar')
+            'HeaderBar': HeaderBar
         },
         data(){
             return {}
