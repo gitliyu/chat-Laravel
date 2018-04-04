@@ -29,5 +29,5 @@ mix.options({
 })
 
 mix.js('resources/assets/js/main.js', 'public/js')
-   .extract(['vue', "vuex", "element-ui","vue-router", "axios"])
-   .sass('resources/assets/sass/app.scss', 'public/css');
+    .extract(['vue', "vuex", "element-ui","vue-router", "axios"])
+    .sass('resources/assets/sass/app.scss', 'public/css');

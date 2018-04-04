@@ -9,7 +9,7 @@
         "prod": "npm run production",
         "production": "cross-env NODE_ENV=production node_modules/webpack/bin/webpack.js --no-progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
         "server": "node resources/assets/js/server",
-        "watch" : "concurrently \"npm run server\" \"npm run watch-primary\""
+        "watch": "concurrently \"npm run server\" \"npm run watch-primary\""
     },
     "dependencies": {
         "concurrently": "^3.5.1",

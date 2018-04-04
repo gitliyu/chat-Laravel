@@ -1,14 +1,4 @@
 @import url(https://fonts.googleapis.com/css?family=Raleway:300,400,600);
-html {
-  height: 100%;
-}
-html body {
-    height: 100%;
-}
-html body #app {
-      height: 100%;
-}
-
 .login-page {
   height: 100%;
   background: url(/images/login.jpg?86770887b11931266cfc7ce035464941);
@@ -8513,5 +8503,37 @@ button.close {
   .hidden-print {
     display: none !important;
   }
+}
+
+html {
+  height: 100%;
+}
+
+html body {
+  height: 100%;
+}
+
+html body #app {
+  height: 100%;
+}
+
+.center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+.text-center {
+  text-align: center;
+}
+
+.pull-left {
+  float: left;
+}
+
+.pull-right {
+  float: right;
 }
 
