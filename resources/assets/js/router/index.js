@@ -1,11 +1,12 @@
-import Vue from 'vue'
-import Router from 'vue-router'
-import Login from '../components/Login.vue'
+import Vue from 'vue';
+import Router from 'vue-router';
+import Login from '../components/Login.vue';
+import Register from '../components/Register.vue';
 import Full from '../components/Full.vue';
-import Message from '../components/Message.vue';
-import Friend from '../components/Friend.vue';
-import Personal from '../components/Personal.vue';
-import Chat from '../components/Chat.vue';
+import Message from '../components/Message/Message.vue';
+import Friend from '../components/Friend/Friend.vue';
+import Personal from '../components/Personal/Personal.vue';
+import Chat from '../components/Message/Chat.vue';
 
 Vue.use(Router)
 
@@ -19,6 +20,11 @@ export default new Router({
       path: '/login',
       name: 'Login',
       component: Login,
+    },
+    {
+      path: '/register',
+      name: 'Register',
+      component: Register,
     },
     {
       path: '/full',

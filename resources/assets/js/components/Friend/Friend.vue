@@ -20,7 +20,7 @@
 </template>
 
 <script type="text/javascript">
-    import ChatItem from './widget/ChatItem';
+    import ChatItem from '../widget/ChatItem';
     export default {
         components: {
             'ChatItem': ChatItem

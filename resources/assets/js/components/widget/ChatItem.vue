@@ -31,7 +31,7 @@
             },
         },
         mounted(){
-            this.user = this.users.filter( user => user.id === this.id)[0];
+            this.getUser();
         },
         methods: {
             onChat (id) {
@@ -43,7 +43,15 @@
                         }
                     });
                 }
+            },
+            getUser () {
+              this.user = this.users.filter( user => user.id === this.id)[0];
             }
+        },
+        watch: {
+          id: function () {
+            this.getUser();
+          }
         }
     }
 </script>

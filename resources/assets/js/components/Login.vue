@@ -38,39 +38,8 @@
                 }
             },
             register(){
-                this.$message('TO DO');
+                this.$router.push('/register')
             }
         }
     }
 </script>
-
-<style lang="scss">
-    .login-page{
-        height: 100%;
-        background: url("../../image/login.jpg");
-        -webkit-background-size: cover;
-        background-size: cover;
-        .center{
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-        }
-        .mu-text-field.has-label .mu-text-field-label.float{
-            color: #666;
-        }
-        .mu-text-field-line{
-            background-color: rgba(0,0,0,.12);
-        }
-        .button-group{
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            .el-button{
-                width: 12rem;
-                margin: 10px 0;
-            }
-        }
-    }
-</style>

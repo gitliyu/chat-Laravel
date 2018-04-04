@@ -16,7 +16,7 @@
 </template>
 
 <script type="text/javascript">
-    import ChatItem from './widget/ChatItem.vue';
+    import ChatItem from '../widget/ChatItem.vue';
     export default {
         components: {
             'ChatItem': ChatItem
