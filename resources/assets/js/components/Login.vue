@@ -1,8 +1,8 @@
 <template>
     <div class="login-page">
         <div class="center">
-            <mu-text-field label="用户名" v-model="name" labelFloat/><br/>
-            <mu-text-field label="密码" v-model="password" labelFloat/><br/>
+            <mu-text-field label="邮箱" v-model="form.email" labelFloat/><br/>
+            <mu-text-field label="密码" v-model="form.password" labelFloat/><br/>
             <div class="button-group">
                 <el-button type="primary" round @click="login">登录</el-button>
                 <el-button round @click="register">注册</el-button>
@@ -15,8 +15,10 @@
     export default {
         data(){
             return {
-                name : '',
-                password : ''
+                form: {
+                    name : '',
+                    password : ''
+                }
             }
         },
         computed : {
@@ -34,7 +36,7 @@
                     io.emit('set id', currentUser.id);
                     this.$router.push('/message');
                 } else{
-                    this.$message('用户名或密码不正确');
+                    this.$message.errors('用户名或密码不正确');
                 }
             },
             register(){
