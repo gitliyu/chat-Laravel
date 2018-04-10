@@ -1,0 +1,92 @@
+@import 'variables';
+
+.pull-left{
+  float: left;
+}
+.pull-right{
+  float: right;
+}
+.pull-center{
+  margin: 0 auto;
+}
+.center{
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.text-center{
+  text-align: center;
+}
+.text-left{
+  text-align: left;
+}
+.text-right{
+  text-align: right;
+}
+
+.clearfix:after {
+  visibility: hidden;
+  display: block;
+  font-size: 0;
+  content: " ";
+  clear: both;
+  height: 0;
+}
+.hide{
+  display: none;
+}
+
+.font-bold{
+  font-weight: bold !important;
+}
+
+// margin padding setting
+$map: (0, 1, 2, 3, 4);
+$directions: (l: left, r: right, t: top, b: bottom);
+
+@each $index in $map {
+  .p-#{$index} {
+    padding: $index * 0.5rem !important;
+  }
+  .m-#{$index} {
+    margin: $index * 0.5rem !important;
+  }
+  @each $key,$value in $directions {
+    .p#{$key}-#{$index} {
+      padding-#{$value}: $index * 0.5rem !important;
+    }
+    .m#{$key}-#{$index} {
+      margin-#{$value}: $index * 0.5rem !important;
+    }
+  }
+}
+
+@for $index from -1 to 101 {
+  .w-#{$index}{
+    width: #{$index}% !important;
+  }
+  .h-#{$index}{
+    height: #{$index}% !important;
+  }
+  .font-#{$index}{
+    font-size: #{$index}px !important;
+  }
+}
+
+$fonts: (sm: 0.9, normal: 1, md: 1.2, lg: 1.5, xl: 2, 3xl: 3);
+
+@each $key,$value in $fonts {
+  .font-#{$key} {
+    font-size: #{$value}rem !important;
+  }
+}
+
+$display: (inline, block, inline-block, flex, inline-flex);
+
+@each $item in $display {
+  .d-#{$item}{
+    display: #{$item};
+  }
+}

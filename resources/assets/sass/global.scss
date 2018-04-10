@@ -1,0 +1,25 @@
+@import "variables";
+html{
+  height: 100%;
+  body{
+    height: 100%;
+    #app{
+      height: 100%;
+    }
+  }
+}
+
+.login-page{
+  height: 100%;
+  background: url("../image/login.jpg");
+  -webkit-background-size: cover;
+  background-size: cover;
+  .center{
+    min-width: 250px;
+  }
+}
+
+.btn a{
+  color: $white-color;
+  text-decoration: none;
+}

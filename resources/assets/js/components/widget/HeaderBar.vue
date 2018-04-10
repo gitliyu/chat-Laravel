@@ -59,9 +59,9 @@
                 this.leftPopup = false;
             },
             onSignOut () {
-                //TO DO
-                location.reload();
-//                this.$router.push('/login');
+               axios.post('/logout').then(() => {
+                 window.location.href = window.location.origin + '/login';
+               })
             }
         },
         watch : {
