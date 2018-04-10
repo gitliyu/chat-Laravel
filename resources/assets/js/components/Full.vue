@@ -25,7 +25,7 @@
       axios.get('/user').then(res => {
         this.$store.commit('_setUser', res.data);
         io.emit('set id', res.data.id);
-      })
+      });
     },
     methods: {}
   }

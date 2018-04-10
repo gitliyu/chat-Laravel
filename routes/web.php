@@ -21,4 +21,8 @@ Route::get('/home', function () {
     return view('auth.login');
 })->name('home');
 
-Route::get('/user', 'UserController@current')->name('user');
+// 获取当前用户
+Route::get('/user', 'UserController@current');
+
+// 保存消息记录
+Route::post('/record', 'RecordController@save');

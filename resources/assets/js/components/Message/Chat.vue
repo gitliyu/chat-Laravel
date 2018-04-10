@@ -59,7 +59,7 @@
                     from : this.currentUser.id,
                     to   : this.friend_id,
                     msg  : this.message,
-                    data : new Date()
+                    date : new Date()
                 };
                 this.$store.dispatch('setRecord', {
                     msg  : this.message,
