@@ -32,9 +32,6 @@
             }
         },
         computed : {
-            users : function(){
-                return this.$store.state.users;
-            },
             currentUser : function(){
                 return this.$store.state.currentUser;
             },

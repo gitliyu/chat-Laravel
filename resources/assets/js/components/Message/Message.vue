@@ -2,13 +2,13 @@
     <div class="message-page">
         <mu-list>
             <chat-item
-                    v-if="messages.length"
-                    v-for="item in messages"
+                    v-if="currentUser.records.length"
+                    v-for="item in currentUser.records"
                     :key="item.id"
-                    :id="item.id"
-                    :msg="item.msg">
+                    :user="item.user"
+                    :msg="item.message">
             </chat-item>
-            <mu-list-item v-if="!messages.length">
+            <mu-list-item v-if="!currentUser.records.length">
                 暂无消息记录
             </mu-list-item>
         </mu-list>
@@ -21,38 +21,17 @@
         components: {
             'ChatItem': ChatItem
         },
-        data(){
-            return {
-                messages : []
-            }
-        },
         computed :{
-            records : function(){
-                return this.$store.state.records;
-            }
+          currentUser : function(){
+            return this.$store.state.currentUser;
+          },
         },
         mounted(){
-            this.initRecords(this.records);
+
         },
         methods: {
-            initRecords(val){
-                let messages = {};
-                val.forEach( item => {
-                    messages[item.from] = item;
-                });
-                Object.values(messages).forEach(item => {
-                    this.messages.push({
-                        id : item.from,
-                        msg : item.msg
-                    });
-                });
-            }
+
         },
-        watch : {
-            records : function(val){
-                this.initRecords(val);
-            }
-        }
     }
 </script>
 

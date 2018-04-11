@@ -13,25 +13,15 @@
 <script type="text/javascript">
     export default {
         data(){
-            return {
-                user : {}
-            }
+            return {}
         },
         props:{
-            id : Number,
+            user : Object,
             msg: String,
             canChat: {
                 type    : Boolean,
                 default : true
             }
-        },
-        computed:{
-            users : function(){
-                return this.$store.state.users;
-            },
-        },
-        mounted(){
-            this.getUser();
         },
         methods: {
             onChat (id) {
@@ -43,15 +33,7 @@
                         }
                     });
                 }
-            },
-            getUser () {
-              this.user = this.users.filter( user => user.id === this.id)[0];
             }
-        },
-        watch: {
-          id: function () {
-            this.getUser();
-          }
         }
     }
 </script>

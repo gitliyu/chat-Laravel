@@ -12,4 +12,10 @@ class Record extends Model
         'to',
         'unread'
     ];
+
+    // 聊天记录
+    public function user()
+    {
+        return $this->hasOne('App\User', 'id', 'from');
+    }
 }

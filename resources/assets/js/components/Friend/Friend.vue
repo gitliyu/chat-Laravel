@@ -10,7 +10,7 @@
                 v-if="currentUser.friends.length"
                 v-for="item in currentUser.friends"
                 :key="item.id"
-                :id="item">
+                :user="item">
             </chat-item>
             <mu-list-item v-if="!currentUser.friends.length">
                 暂无
