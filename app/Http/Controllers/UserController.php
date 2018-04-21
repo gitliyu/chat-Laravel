@@ -10,19 +10,27 @@ use Illuminate\Support\Facades\Auth;
 
 class UserController extends Controller
 {
-    public function index(){
-        return $this->sendResponse(User::all(), 'success');
-    }
-
     // 获取当前用户
-    public function current(){
+    public function current()
+    {
         $user = Auth::user();
         $user['friends'] = $this->getRelations($user);
         $user['records'] = $this->getRecords($user);
         return $this->sendResponse($user);
     }
 
-    public function getRelations($user){
+    // 添加好友
+    public function addRelation(Request $request)
+    {
+        Relation::create([
+            'user_id' => Auth::user()['id'],
+            'friend_id' => $request['id']
+        ]);
+        return $this->sendResponse('');
+    }
+
+    public function getRelations($user)
+    {
         $relation = Relation::where('user_id', $user['id'])
             ->with('friends')
             ->get()
@@ -32,18 +40,11 @@ class UserController extends Controller
         return $relation;
     }
 
-    public function getRecords($user){
+    public function getRecords($user)
+    {
         $record = Record::where('to', $user['id'])
             ->with('user')
             ->get();
         return $record;
-    }
-
-    public function sendResponse($result, $message = 'success')
-    {
-        return [
-            'data'    => $result,
-            'message' => $message,
-        ];
     }
 }

@@ -28,7 +28,7 @@
                 if(this.canChat){
                     this.$router.push({
                         name   : 'chat',
-                        params : {
+                        query : {
                             id : id
                         }
                     });

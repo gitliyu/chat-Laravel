@@ -10,4 +10,12 @@ use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 class Controller extends BaseController
 {
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
+
+    public function sendResponse($result, $message = 'success')
+    {
+        return [
+            'data' => $result,
+            'message' => $message,
+        ];
+    }
 }

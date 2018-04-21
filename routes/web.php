@@ -24,5 +24,12 @@ Route::get('/home', function () {
 // 获取当前用户
 Route::get('/user', 'UserController@current');
 
+//查询聊天详情
+Route::post('/record/search', 'RecordController@search');
+
 // 保存消息记录
-Route::post('/record', 'RecordController@save');
+Route::post('/record/add', 'RecordController@save');
+
+// 添加好友
+Route::post('/relation/add', 'UserController@addRelation');
+

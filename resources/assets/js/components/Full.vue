@@ -21,13 +21,6 @@
     data(){
       return {}
     },
-    created () {
-      axios.get('/user').then(res => {
-        let user = res.data.data;
-        this.$store.commit('_setUser', user);
-        io.emit('set id', user.id);
-      });
-    },
     methods: {}
   }
 </script>

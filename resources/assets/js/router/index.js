@@ -1,7 +1,5 @@
 import Vue from 'vue';
 import Router from 'vue-router';
-import Login from '../components/Login.vue';
-import Register from '../components/Register.vue';
 import Full from '../components/Full.vue';
 import Message from '../components/Message/Message.vue';
 import Friend from '../components/Friend/Friend.vue';
@@ -15,16 +13,6 @@ export default new Router({
     {
       path: '/',
       redirect : '/full',
-    },
-    {
-      path: '/login',
-      name: 'Login',
-      component: Login,
-    },
-    {
-      path: '/register',
-      name: 'Register',
-      component: Register,
     },
     {
       path: '/full',
