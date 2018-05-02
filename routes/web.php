@@ -17,19 +17,13 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/home', function () {
-    return view('auth.login');
-})->name('home');
+Route::get('/home', 'HomeController@index')->name('home');
 
-// 获取当前用户
-Route::get('/user', 'UserController@current');
+Route::get('/user', 'UserController@current'); // 获取当前用户
 
-//查询聊天详情
-Route::post('/record/search', 'RecordController@search');
+Route::post('/relation/add', 'UserController@addRelation'); // 添加好友
 
-// 保存消息记录
-Route::post('/record/add', 'RecordController@save');
+Route::post('/record/search', 'RecordController@search'); //查询聊天详情
 
-// 添加好友
-Route::post('/relation/add', 'UserController@addRelation');
+Route::post('/record/add', 'RecordController@save'); // 保存消息记录
 

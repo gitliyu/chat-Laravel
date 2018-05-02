@@ -108,9 +108,11 @@
       width: 100%;
       position: fixed;
       bottom: 0;
+      background-color: #fff;
       .mu-text-field {
         padding: 0 10px;
         margin: 0 0 0 2rem;
+        width: 75%;
       }
       .mu-text-field-hint {
         color: #666;
