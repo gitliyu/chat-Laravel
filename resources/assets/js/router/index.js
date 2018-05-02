@@ -3,6 +3,7 @@ import Router from 'vue-router';
 import Full from '../components/Full.vue';
 import Message from '../components/Message/Message.vue';
 import Friend from '../components/Friend/Friend.vue';
+import FriendAddPage from '../components/Friend/FriendAddPage.vue';
 import Personal from '../components/Personal/Personal.vue';
 import Chat from '../components/Message/Chat.vue';
 
@@ -29,6 +30,11 @@ export default new Router({
           path: '/friend',
           name: '联系人',
           component: Friend,
+        },
+        {
+          path: '/friend/add',
+          name: '添加好友',
+          component: FriendAddPage,
         },
         {
           path: '/personal',

@@ -20,10 +20,9 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/user', 'UserController@current'); // 获取当前用户
-
-Route::post('/relation/add', 'UserController@addRelation'); // 添加好友
+Route::post('/user/add', 'UserController@addRelation'); // 添加好友
+Route::post('/user/search', 'UserController@search'); // 查询用户
 
 Route::post('/record/search', 'RecordController@search'); //查询聊天详情
-
 Route::post('/record/add', 'RecordController@save'); // 保存消息记录
 

@@ -23,3 +23,16 @@ html{
   color: $white-color;
   text-decoration: none;
 }
+
+.input-box {
+  width: 100%;
+  background-color: #fff;
+  .mu-text-field {
+    padding: 0 10px;
+    margin: 0 0 0 2rem;
+    width: 75%;
+  }
+  .mu-text-field-hint {
+    color: #666;
+  }
+}

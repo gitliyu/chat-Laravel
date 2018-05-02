@@ -18,6 +18,13 @@ const store = new Vuex.Store({
     _setRecord(state, data){
       state.records = data;
     }
+  },
+  actions: {
+    queryCurrentUser({commit}){
+      axios.get('/user').then(res => {
+        commit('_setUser', res.data.data);
+      });
+    }
   }
 });
 
